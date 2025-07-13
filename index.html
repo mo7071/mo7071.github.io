@@ -12,11 +12,38 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-   <javascript type="my_portfolio.js"></javascript>
+    <javascript type="my_portfolio.js"></javascript>
     <title>Page_Setup</title>
     <style>
         body {
-            background-color: black;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            z-index: 1;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-image: url('https://as2.ftcdn.net/v2/jpg/13/34/05/11/1000_F_1334051102_MxfHaBiR7GnhpeP341jjX1Mf7cOlgqul.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        main,
+        section,
+        footer,
+        #head_section {
+            position: relative;
+            z-index: 2;
         }
 
         /*portfoli*/
@@ -72,7 +99,7 @@
         }
 
         span {
-            color: blue;
+            color: rgb(202, 1, 54);
         }
 
         /*img*/
@@ -179,17 +206,34 @@
 
         .text_about {
             display: flex;
-            gap: 50px;
-        }
-
-        .text_about li {
-            list-style: none;
-        }
-
-        .text_about a {
-            text-decoration: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
             color: white;
-            gap: 20px;
+        }
+
+        .about_item {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 8px;
+            width: fit-content;
+        }
+
+        .about_item h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .about_item p {
+            margin: 5px 0 0 0;
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        .about_item progress {
+            width: 100%;
+            height: 12px;
+            border-radius: 5px;
         }
 
         .left_section p i {
@@ -203,7 +247,17 @@
         .left_section p i:hover {
             transform: translateY(-5px);
         }
+        /*Project*/
+         #project{
+          padding: 20px 0;
+          color: white;
 
+        }
+      .project_1{
+            margin: 0 40px;
+            padding: 0 15px;
+
+      }
         /*Skills*/
         #skills_section {
             padding: 25px 0;
@@ -335,36 +389,36 @@
            margin-top: 20px;
            background: white;
          } */
-          footer {
-      background: #b88c3e;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-    }
+        footer {
+            background: #b88c3e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-    .footer-columns {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
+        .footer-columns {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
 
-    .footer-columns div {
-      margin: 10px;
-    }
+        .footer-columns div {
+            margin: 10px;
+        }
 
-    input[type="text"] {
-      padding: 8px;
-      border-radius: 5px;
-      border: none;
-      width: 200px;
-    }
+        input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
 
-    .credit {
-      margin-top: 20px;
-      font-size: 14px;
-    }
+        .credit {
+            margin-top: 20px;
+            font-size: 14px;
+        }
 
         /* Tablet devices */
         @media screen and (max-width: 768px) {
@@ -488,13 +542,12 @@
                 padding: 0;
             }
         }
-        
     </style>
-    
+
 </head>
 
 <body>
-  <!--Head Section-->
+    <!--Head Section-->
     <div id="head_section">
         <div class="head_section1">
             <div class="head_section2">
@@ -516,7 +569,7 @@
         <section class="first_section">
             <div class="left_section">
                 Hi, My name is <span>MO SUFIYAN </span> and
-                I am Web Developer [Like HTML ,CSS and JavaScript ,SQL] 
+                I am Web Developer [Like HTML ,CSS and JavaScript ,SQL]
                 <p>
                     <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-twitter"></i>
@@ -545,12 +598,33 @@
                 modi. Odit deleniti aliquam atque ducimus commodi ab, officiis eveniet
                 nisi pariatur ipsum dolores corporis alias.</p>
             <div class="text_about">
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Experience</a></li>
-                <li><a href="#">Education</a></li>
+                <div class="about_item">
+                    <h4>Skills</h4>
+                    <progress value="50" max="100"></progress>
+                </div>
+                <div class="about_item">
+                    <h4>Experience</h4>
+                    <p>Fresher</p>
+                </div>
+                <div class="about_item">
+                    <h4>Education</h4>
+                    <p>Diploma - Instrumentation & Control</p>
+                    <p>B.Tech - Pursuing</p>
+                </div>
             </div>
+
         </div>
     </section>
+    <!--Project-->
+     <div id="project">
+        <div class="project_1">
+            <h1 class="project_2">Project Upcoming</h1>
+            <div class="project_3">
+               
+            </div>
+        </div>
+     </div>
+
     <!--Skills-->
     <div id="skills_section">
         <div class="skill_container">
@@ -594,8 +668,10 @@
                     <i class="fa-solid fa-database"></i>
                     <h2>SQL Database</h2>
                     <p>
-                        Structured Query Language is a domain-specific language used to manage data, especially in a relational database management system. 
-                        It is particularly useful in handling structured data, i.e., data incorporating relations among entities and variables.
+                        Structured Query Language is a domain-specific language used to manage data, especially in a
+                        relational database management system.
+                        It is particularly useful in handling structured data, i.e., data incorporating relations among
+                        entities and variables.
                     </p>
                     <a href="#">Learn More</a>
                 </div>
@@ -608,8 +684,8 @@
             <div class="row">
                 <div class="contact_left">
                     <h1 class="sub_title">Contact Me!</h1>
-                    <p><i class="fa-solid fa-envelope"></i>contact@example.com</p>
-                    <p><i class="fa-solid fa-phone"></i>0123456789</p>
+                    <p><i class="fa-solid fa-envelope"></i>zacksufiyan@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+917071189154</p>
                     <div class="social_icons">
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -630,33 +706,33 @@
     </div>
     <!---About data footer-->
     <footer>
-    <div class="footer-columns">
-      <div>
-        <h3>Portfolio</h3>
-        <p>HTML</p>
-        <p>CSS</p>
-        <p>JavaScript</p>
-        <p>SQL Database</p>
-        <p>Project</p>
-      </div>
+        <div class="footer-columns">
+            <div>
+                <h3>Portfolio</h3>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>SQL Database</p>
+                <p>Project</p>
+            </div>
 
-      <div>
-        <h3>Menu</h3>
-        <p>Home</p>
-        <p>About</p>
-        <p>Contact</p>
-        <p>Services</p>
-        <p>Project</p>
-      </div>
+            <div>
+                <h3>Menu</h3>
+                <p>Home</p>
+                <p>About</p>
+                <p>Contact</p>
+                <p>Services</p>
+                <p>Project</p>
+            </div>
 
-      <!-- Search Box -->
-      <div>
-        <input type="text" id="searchInput" placeholder="Search..." onkeydown="handleSearch(event)">
-      </div>
-    </div>
+            <!-- Search Box -->
+            <div>
+                <input type="text" id="searchInput" placeholder="Search..." onkeydown="handleSearch(event)">
+            </div>
+        </div>
 
-    <div class="credit">© MADE BY MO SUFIYAN 2025 | All Rights Reserved.</div>
-  </footer>
+        <div class="credit">© MADE BY MO SUFIYAN 2025 | All Rights Reserved.</div>
+    </footer>
 
     <!--using javascript form generate-->
     <script>
@@ -699,26 +775,26 @@
         });
     </script>
     <!-- JavaScript -->
-  <script>
-    function handleSearch(event) {
-      if (event.key === "Enter") {
-        const input = document.getElementById("searchInput").value.toLowerCase();
+    <script>
+        function handleSearch(event) {
+            if (event.key === "Enter") {
+                const input = document.getElementById("searchInput").value.toLowerCase();
 
-        const links = {
-          "html": "https://www.w3schools.com/html/",
-          "css": "https://www.w3schools.com/css/",
-          "javascript": "https://www.w3schools.com/js/",
-          "sql": "https://www.w3schools.com/sql/sql_intro.asp"
-        };
+                const links = {
+                    "html": "https://www.w3schools.com/html/",
+                    "css": "https://www.w3schools.com/css/",
+                    "javascript": "https://www.w3schools.com/js/",
+                    "sql": "https://www.w3schools.com/sql/sql_intro.asp"
+                };
 
-        if (links[input]) {
-          window.location.href = links[input];  // redirect
-        } else {
-          alert("No page found for: " + input);
+                if (links[input]) {
+                    window.location.href = links[input];  // redirect
+                } else {
+                    alert("No page found for: " + input);
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 </body>
 
 </html>
